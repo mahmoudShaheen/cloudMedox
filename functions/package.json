@@ -1,0 +1,8 @@
+{
+  "name": "database-notifications",
+  "description": "Send FCM notifications when message added to databse",
+  "dependencies": {
+    "firebase-admin": "^4.1.2",
+    "firebase-functions": "^0.5.1"
+  }
+}
