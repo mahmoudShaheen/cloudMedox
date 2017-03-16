@@ -1,8 +1,9 @@
 {
-  "name": "database-notifications",
-  "description": "Send FCM notifications when message added to databse",
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
   "dependencies": {
     "firebase-admin": "^4.1.2",
-    "firebase-functions": "^0.5.1"
-  }
+    "firebase-functions": "^0.5"
+  },
+  "private": true
 }
