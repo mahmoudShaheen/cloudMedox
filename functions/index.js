@@ -14,10 +14,10 @@ exports.sendDatabaseNotification = functions.database.ref('/messages/{messageID}
   console.log('messageID:  ', messageID);
 
   //get message content
-  const token = admin.database().ref(`/messages/${messageID}/to`).once('value');
-  const level = admin.database().ref(`/messages/${messageID}/level`).once('value');
-  const message = admin.database().ref(`/messages/${messageID}/message`).once('value');
-  const title = admin.database().ref(`/messages/${messageID}/title`).once('value');
+  const token = admin.database().ref(`/messages/${messageID}/to`).once('value').toString();
+  const level = admin.database().ref(`/messages/${messageID}/level`).once('value').toString();
+  const message = admin.database().ref(`/messages/${messageID}/message`).once('value').toString();
+  const title = admin.database().ref(`/messages/${messageID}/title`).once('value').toString();
 
   // message details.
   const payload = {
