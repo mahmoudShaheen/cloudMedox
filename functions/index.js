@@ -5,7 +5,7 @@ const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
 //main lambda function
-exports.sendDatabaseNotification = functions.database.ref('/messages/{messageID}}').onWrite(event => {
+exports.sendDatabaseNotification = functions.database.ref('/messages/{messageID}').onWrite(event => {
   const messageID = event.params.messageID;
   // If message deleted function return
   if (!event.data.val()) {
