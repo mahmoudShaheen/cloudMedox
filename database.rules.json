@@ -1,22 +1,29 @@
 {
   "rules": {
-    ".read": "auth == null",
-    ".write": "auth == null"
-  }
-}
-/*
-{
-  "rules": {
     // User profiles are only readable/writable by the user who owns it
     "users": {
       "$UID": {
         ".read": "auth.uid == $UID",
         ".write": "auth.uid == $UID"
       }
+    },
+    "messages": {
+      ".read": "auth != null",
+      "write": "auth != null"
     }
   }
 }
+
+/*
+{
+  "rules": {
+    //requires only auth
+    ".read": "auth == null",
+    ".write": "auth == null"
+  }
+}
 */
+
 /*
  * original
 {
