@@ -20,24 +20,22 @@ exports.sendDatabaseNotification = functions.database.ref('/messages/{messageID}
   const titlePromise = admin.database().ref(`/messages/${messageID}/title`).once('value');
 
   return Promise.all([tokenPromise, levelPromise, messagePromise, titlePromise]).then(results => {
-    const token = results[0];
-    const level = results[1];
-    const message = results[2];
-    const title = results[3];
 
-    console.log(token);
-    console.log(level);
-    console.log(message);
-    console.log(title);
+    const token = results[0].val();
+    const level = results[1].val();
+    const message = results[2].val();
+    const title = results[3].val();
+
     // message details.
     const payload = {
       data: {
         title: `${title}`,
-        body: `${message}`,
+        message: `${message}`,
         level: `${level}`
       }
     };
-    console.log(payload)
+
+    console.log("payload: ",payload)
     // Set the message as high priority and have it expire after 24 hours.
     const options = {
       priority: "high",
