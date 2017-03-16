@@ -11,7 +11,7 @@
     // for users to be able to send messages to each other
     "messages": {
       ".read": "auth != null",
-      "write": "auth != null"
+      ".write": "auth != null"
     }
   }
 }
