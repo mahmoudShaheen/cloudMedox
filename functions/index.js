@@ -35,12 +35,13 @@ exports.sendDatabaseNotification = functions.database.ref('/users/{userID}/notif
         level: `${level}`
       }
     };
-    console.log("payload: ",payload)
+    console.log("payload: ",payload);
+    console.log("Reciever: ",to);
     //get user token watch or mobile
     const tokenPromise = admin.database().ref(`/users/${userID}/token/${to}`).once('value');
     return Promise.all([tokenPromise]).then(results => {
       const token = results[0].val();
-
+      console.log('token:  ', token);
       // Set the message as high priority and have it expire after 24 hours.
       const options = {
         priority: "high",
