@@ -5,12 +5,17 @@
 */
 
 {
-  "messages": {
-    "$id": {
-      "to": "receiverToken",
-      "level": "1",
-      "title": "Emergency Message!",
-      "Message": "Action Required IMMEDIATELY!!"
+  "users": {
+    "$userID": {
+      "notification": {
+        "$messageID": {
+          "to": "mobile/watch",
+          "level": "1",
+          "time": "MON day, year HH:MM:SS AM/PM",
+          "title": "Emergency Message!",
+          "Message": "Action Required IMMEDIATELY!!"
+        }
+      }
     }
   }
 }
